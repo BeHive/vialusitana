@@ -1,97 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ setting('site.title') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ mix('/js/app.js') }}" defer></script>
-
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
+    <script src="https://kit.fontawesome.com/8a59d080bb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" id="et-builder-googlefonts-cached-css"
+          href="https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%7CPT+Sans%3Aregular%2Citalic%2C700%2C700italic&amp;ver=5.2.3#038;subset=latin,latin-ext"
+          type="text/css" media="all">
     <!-- Styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
-    <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ setting('site.title') }}
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<!-- header -->
+<header class="siteHeader">
+    <div class="container text-right pt-1 pb-1">
+        <a href="#" class="pl-3">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="pl-3">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+</header>
+<div id="app" class="container">
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
+    <!-- menu -->
+{{menu('site', 'menu')}}
 
-                </ul>
+<!-- hero -->
+    <img class="headerImage pb-5" src="/storage/{{ setting('site.banner') }}">
 
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">Session Log</a>
-                        </li>
-                        {{--
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('character') }}">Characters</a>
-                        </li>
-                        --}}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('party') }}">Party</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('password') }}">
-                                    Change Password
-                                </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-
-                    @endguest
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main class="py-4">
-        @yield('content')
-    </main>
 </div>
+
+<main role="main" class="container pb-5">
+    <!-- main content -->
+    @yield('content')
+</main>
+
+<footer class="site-footer">
+    <p>
+        <a href="#">Voltar ao topo</a>
+    </p>
+</footer>
+</body>
+<script src="{{ mix('/js/app.js') }}" defer></script>
 </body>
 </html>

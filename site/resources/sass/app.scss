@@ -1,6 +1,5 @@
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
 @import 'variables';
@@ -8,7 +7,72 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+body{
+  font-family: $font-family-sans-serif;
+  color: $light-color;
+}
+
+.siteHeader{
+  background-color: $light-color;
+  a{
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.headerImage {
+  width: 100%;
+}
+
+.topMenu{
+  padding-right: 0px;
+}
+
+.site-footer {
+  padding: 2.5rem 0;
+  color: $main-color;
+  text-align: center;
+  background-color: $light-gray;
+  border-top: .05rem solid $accent-color;
+}
+
+.pageImage img{
+  width: 100%;
+}
+
+.titleBar {
+  position: relative;
+  h2{
+    line-height: 1em;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 44px;
+  }
+  h2:nth-of-type(1) {
+    color: $main-color;
+  }
+  h2:nth-of-type(2) {
+    color: $accent-color;
+  }
+}
+
+.subTitle{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  color: $light-color;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+.bodyContent ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 1em;
+  li:before {
+    display: inline-block;
+    content: "\2013\a0";
+    width: 1em;
+    margin-left: -1em;
+  }
 }
