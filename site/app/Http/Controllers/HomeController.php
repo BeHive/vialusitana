@@ -25,11 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-dd("sopa");
-        $sessions = Session::orderBy('real_date', 'desc')->paginate(10);
-
         return view('home', [
-            'sessions' => $sessions
         ]);
     }
 }
