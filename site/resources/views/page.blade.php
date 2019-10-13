@@ -14,7 +14,7 @@
     <div class="row">
         <aside class="col-md-3 pageImage">
             @if($page->image1)
-                <img src="/storage/{{ $page->image1 }}">
+                <img src="/storage/{{ $page->image1 }}" class="pb-3">
             @endif
             @if($page->image2)
                 <img src="/storage/{{ $page->image2 }}">

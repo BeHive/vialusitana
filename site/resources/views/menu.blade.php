@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light topMenu">
     <div class="collapse navbar-collapse">
+        <img class="navbar-brand" src="/storage/{{ setting('site.logo') }}">
         <span class="mr-auto"></span>
         <ul class="navbar-nav">
             @foreach($items as $menu_item)

@@ -20,23 +20,28 @@
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<!-- header -->
-<header class="siteHeader">
-    <div class="container text-right pt-1 pb-1">
-        <a href="#" class="pl-3">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="pl-3">
-            <i class="fab fa-twitter"></i>
-        </a>
+<div class="fixed-top topMenu">
+    <!-- header -->
+    <header class="siteHeader">
+        <div class="container text-right pt-1 pb-1">
+            <a href="#" class="pl-3">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="pl-3">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        {{menu('site', 'menu')}}
     </div>
-</header>
-<div id="app" class="container">
+</div>
+<!-- menu -->
 
-    <!-- menu -->
-{{menu('site', 'menu')}}
 
-<!-- hero -->
+<div id="app" class="container mt-5 pt-5">
+
+    <!-- hero -->
     <img class="headerImage pb-5" src="/storage/{{ setting('site.banner') }}">
 
 </div>
